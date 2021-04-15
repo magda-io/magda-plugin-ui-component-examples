@@ -1,7 +1,7 @@
 import React from "react";
-import { HeaderComponent } from "./externalComponentDef";
+import { HeaderComponentType } from "./externalComponents";
 
-const MagdaPluginComponentHeader: HeaderComponent = (props) => {
+const MagdaPluginComponentHeader: HeaderComponentType = (props) => {
     return (
         <div>
             <div>
@@ -11,6 +11,7 @@ const MagdaPluginComponentHeader: HeaderComponent = (props) => {
                 isFetchingWhoAmI : {props.isFetchingWhoAmI ? "true" : "false"}
             </div>
             <div>User: {props.user ? JSON.stringify(props.user) : "N/A"}</div>
+            <div>Magda Config: {props.config ? JSON.stringify(props.config) : "N/A"}</div>
         </div>
     );
 };

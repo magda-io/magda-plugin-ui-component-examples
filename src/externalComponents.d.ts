@@ -1,23 +1,9 @@
 import { ComponentType } from "react";
+import { ConfigType, User, Role } from "./magdaCommon";
 
-export type Role = {
-    id: string;
-    name: string;
-    description: string;
-    permissionIds: string[];
-};
-
-export type User = {
-    id: string;
-    displayName: string;
-    email: string;
-    photoURL: string;
-    source: string;
-    isAdmin: boolean;
-    roles: Role[];
-    permissions: any[];
-    orgUnitId?: string;
-};
+export type ExternalCompontType<PropsType> = ComponentType<
+    PropsType & { config: ConfigType }
+>;
 
 type HeaderNavItem = {
     default?: {
@@ -30,12 +16,14 @@ type HeaderNavItem = {
     order: number;
 };
 
-export type HeaderComponent = ComponentType<{
+type HeaderComponentProps = {
     isFetchingWhoAmI: boolean;
     user: User;
     whoAmIError: Error | null;
     headerNavItems: HeaderNavItem[];
-}>;
+};
+
+export type HeaderComponentType = ExternalCompontType<HeaderComponentProps>;
 
 type CopyRightItem = {
     href: string;
@@ -56,7 +44,7 @@ type FooterNavLinkGroup = {
     order: number;
 };
 
-export type FooterComponent = ComponentType<{
+type FooterComponentPropsType = {
     isFetchingWhoAmI: boolean;
     user: User;
     whoAmIError: Error | null;
@@ -64,4 +52,6 @@ export type FooterComponent = ComponentType<{
     footerMediumNavs: FooterNavLinkGroup[];
     footerSmallNavs: FooterNavLinkGroup[];
     footerCopyRightItems: CopyRightItem[];
-}>;
+};
+
+export type FooterComponentType = ExternalCompontType<FooterComponentPropsType>;

@@ -1,7 +1,7 @@
 import React from "react";
-import { FooterComponent } from "./externalComponentDef";
+import { FooterComponentType } from "./externalComponents";
 
-const MagdaPluginComponentFooter: FooterComponent = (props) => {
+const MagdaPluginComponentFooter: FooterComponentType = (props) => {
     return (
         <div>
             <div>
@@ -11,6 +11,7 @@ const MagdaPluginComponentFooter: FooterComponent = (props) => {
                 isFetchingWhoAmI : {props.isFetchingWhoAmI ? "true" : "false"}
             </div>
             <div>User: {props.user ? JSON.stringify(props.user) : "N/A"}</div>
+            <div>Magda Config: {props.config ? JSON.stringify(props.config) : "N/A"}</div>
         </div>
     );
 };
