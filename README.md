@@ -39,3 +39,11 @@ For more information, please refer to this issue:
 
 https://github.com/magda-io/magda/issues/3099
 
+### Run The Demo
+
+```bash
+yarn start
+```
+
+Access http://localhost:8080/
+

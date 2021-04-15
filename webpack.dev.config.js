@@ -1,31 +1,20 @@
 const path = require("path");
 const webpack = require("webpack");
 const TsconfigPathsPlugin = require("tsconfig-paths-webpack-plugin");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 const configFile = path.resolve(__dirname, "./tsconfig.json");
 
 module.exports = {
     entry: {
-        MagdaPluginComponentHeader: {
-            import: "./src/MagdaPluginComponentHeader.tsx",
-            filename: "[name].js",
-            library: {
-                name: "[name]",
-                type: "umd",
-                umdNamedDefine: true
-            }
-        },
-        MagdaPluginComponentFooter: {
-            import: "./src/MagdaPluginComponentFooter.tsx",
-            filename: "[name].js",
-            library: {
-                name: "[name]",
-                type: "umd",
-                umdNamedDefine: true
-            }
-        }
+        app: "./src/index.tsx"
     },
-    mode: "production",
+    mode: "development",
+    devtool: "inline-source-map",
+    devServer: {
+        contentBase: "./public",
+        hot: true
+    },
     output: {
         path: path.join(__dirname, ".", "dist")
     },
@@ -33,11 +22,6 @@ module.exports = {
         react: "React",
         "react-dom": "ReactDOM"
     },
-    optimization: {
-        minimize: false
-    },
-
-    devtool: "source-map",
     module: {
         rules: [
             {
@@ -63,6 +47,12 @@ module.exports = {
             }
         ]
     },
+    plugins: [
+        new HtmlWebpackPlugin({
+            title: "Hot Module Replacement",
+            template: path.resolve(__dirname, "public/index.html")
+        })
+    ],
     resolve: {
         plugins: [
             new TsconfigPathsPlugin({

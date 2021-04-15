@@ -8,23 +8,53 @@ interface DateConfig {
 }
 
 export type ConfigType = {
-    authApiBaseUrl?: string;
+    image?: {
+        pullPolicy?: string;
+        repository?: string;
+        tag?: string;
+    };
+    credentialsFetchOptions?: {
+        credentials?: string;
+    };
+    authApiUrl?: string;
     baseUrl?: string;
     authPluginRedirectUrl?: string;
     baseExternalUrl?: string;
     uiBaseUrl?: string;
     showNotificationBanner?: boolean;
-    contentApiBaseUrl?: string;
-    previewMapBaseUrl?: string;
-    registryApiBaseUrl?: string;
-    registryApiReadOnlyBaseUrl?: string;
-    searchApiBaseUrl?: string;
-    correspondenceApiBaseUrl?: string;
-    storageApiBaseUrl?: string;
+    contentApiURL?: string;
+    previewMapUrl?: string;
+    registryFullApiUrl?: string;
+    registryReadOnlyApiUrl?: string;
+    searchApiUrl?: string;
+    correspondenceApiUrl?: string;
+    storageApiUrl?: string;
     gapiIds?: Array<string>;
-    adminApiBaseUrl?: string;
+    adminApiUrl?: string;
+    proxyUrl?: string;
+    rssUrl?: string;
     disableAuthenticationFeatures?: boolean;
     fallbackUrl?: string;
+    breakpoints?: {
+        small: number;
+        medium: number;
+        large: number;
+    };
+    facets?: {
+        id: string;
+        showExplanation?: boolean;
+        name?: string;
+    }[];
+    headerLogoUrl?: string;
+    headerMobileLogoUrl?: string;
+    contentUrl?: string;
+    months?: string[];
+    boundingBox?: {
+        west: number;
+        south: number;
+        east: number;
+        north: number;
+    };
     featureFlags?: {
         [id: string]: boolean;
     };
@@ -43,12 +73,12 @@ export type ConfigType = {
     ckanExportServers: {
         [ckanServerUrl: string]: boolean;
     };
-    defultCkanServer: string;
     defaultTimeZone?: string;
     enableCrawlerViews?: boolean;
     discourseSiteUrl?: string;
     discourseIntegrationDatasetPage?: boolean;
     discourseIntegrationDistributionPage?: boolean;
+    defaultCkanServer?: string;
 };
 
 export type Role = {
