@@ -1,9 +1,20 @@
 import { ComponentType } from "react";
 import { ConfigType, User, Role } from "./magdaCommon";
 
-export type ExternalCompontType<PropsType> = ComponentType<
-    PropsType & { config: ConfigType }
->;
+interface CommonPropsType {
+    isFetchingWhoAmI: boolean;
+    user: User;
+    whoAmIError: Error | null;
+    config: ConfigType;
+    history: History;
+    location: Location;
+    match: any;
+    requestSignOut: () => Promise<void>;
+    requestWhoAmI: () => Promise<void>;
+    fetchContent: () => Promise<void>;
+}
+
+export type ExternalCompontType<T> = ComponentType<T & CommonPropsType>;
 
 type HeaderNavItem = {
     default?: {
@@ -17,9 +28,6 @@ type HeaderNavItem = {
 };
 
 type HeaderComponentProps = {
-    isFetchingWhoAmI: boolean;
-    user: User;
-    whoAmIError: Error | null;
     headerNavItems: HeaderNavItem[];
 };
 
@@ -45,9 +53,6 @@ type FooterNavLinkGroup = {
 };
 
 type FooterComponentPropsType = {
-    isFetchingWhoAmI: boolean;
-    user: User;
-    whoAmIError: Error | null;
     noTopMargin: boolean;
     footerMediumNavs: FooterNavLinkGroup[];
     footerSmallNavs: FooterNavLinkGroup[];
