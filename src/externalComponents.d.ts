@@ -81,4 +81,4 @@ type ExtraVisualisationSectionComponentPropsType = {
 };
 
 export type ExtraVisualisationSectionComponentType =
-    ComponentType<ExtraVisualisationSectionComponentPropsType>;
+    ExternalCompontType<ExtraVisualisationSectionComponentPropsType>;
