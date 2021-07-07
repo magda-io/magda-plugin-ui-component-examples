@@ -60,3 +60,25 @@ type FooterComponentPropsType = {
 };
 
 export type FooterComponentType = ExternalCompontType<FooterComponentPropsType>;
+
+type DatasetEditButtonComponentPropsType = {
+    dataset: ParsedDataset;
+};
+
+export type DatasetEditButtonCompontType =
+    ExternalCompontType<DatasetEditButtonComponentPropsType>;
+
+type DatasetLikeButtonComponentPropsType = {
+    dataset: ParsedDataset;
+};
+
+export type DatasetLikeButtonCompontType =
+    ExternalCompontType<DatasetLikeButtonComponentPropsType>;
+
+type ExtraVisualisationSectionComponentPropsType = {
+    dataset: ParsedDataset;
+    distributionId?: string;
+};
+
+export type ExtraVisualisationSectionComponentType =
+    ComponentType<ExtraVisualisationSectionComponentPropsType>;

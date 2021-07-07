@@ -7,6 +7,12 @@ interface DateConfig {
     };
 }
 
+export interface RawPreviewMapFormatPerferenceItem {
+    format: string;
+    isDataFile?: boolean;
+    urlRegex?: string;
+}
+
 export type ConfigType = {
     image?: {
         pullPolicy?: string;
@@ -79,6 +85,14 @@ export type ConfigType = {
     discourseIntegrationDatasetPage?: boolean;
     discourseIntegrationDistributionPage?: boolean;
     defaultCkanServer?: string;
+    supportExternalTerriaMapV7?: boolean;
+    openInExternalTerriaMapButtonText?: string;
+    openInExternalTerriaMapTargetUrl?: string;
+    extraConfigData?: {
+        // extraConfigData is mainly for config data passing to external UI plugins
+        [key: string]: any;
+    };
+    previewMapFormatPerference?: RawPreviewMapFormatPerferenceItem[];
 };
 
 export type Role = {
