@@ -1,5 +1,5 @@
 import React from "react";
-import { FooterComponentType } from "./externalComponents";
+import { FooterComponentType } from "@magda/external-ui-plugin-sdk";
 
 const MagdaPluginComponentFooter: FooterComponentType = (props) => {
     return (

@@ -1,4 +1,9 @@
-import { ConfigType } from "./magdaCommon";
+import {
+    ConfigDataType,
+    CopyRightItem,
+    FooterNavLinkGroup,
+    HeaderNavItem
+} from "@magda/external-ui-plugin-sdk";
 
 export const user = {
     id: "",
@@ -57,7 +62,7 @@ export const user = {
     managingOrgUnitIds: []
 };
 
-export const headerNavItems = [
+export const headerNavItems: HeaderNavItem[] = [
     {
         order: 0,
         default: {
@@ -92,7 +97,7 @@ export const headerNavItems = [
     }
 ];
 
-export const footerCopyRightItems = [
+export const footerCopyRightItems: CopyRightItem[] = [
     {
         order: 999,
         logoSrc:
@@ -102,7 +107,7 @@ export const footerCopyRightItems = [
     }
 ];
 
-export const footerMediumNavs = [
+export const footerMediumNavs: FooterNavLinkGroup[] = [
     {
         order: 20,
         label: "Developers",
@@ -161,7 +166,7 @@ export const footerSmallNavs = [
     }
 ];
 
-export const config: ConfigType = {
+export const config: ConfigDataType = {
     credentialsFetchOptions: {
         credentials: "include"
     },
@@ -172,38 +177,25 @@ export const config: ConfigType = {
     authPluginRedirectUrl: "/sign-in-redirect",
     contentApiURL: "https://dev.magda.io/api/v0/content/",
     searchApiUrl: "https://dev.magda.io/api/v0/search/",
+
     registryReadOnlyApiUrl: "https://dev.magda.io/api/v0/registry-read-only/",
     registryFullApiUrl: "https://dev.magda.io/api/v0/registry/",
+    useMagdaStorageByDefault: true,
+    anonymousUserLandingPage: "/home",
+    authenticatedUserLandingPage: "/home",
     adminApiUrl: "https://dev.magda.io/api/v0/admin/",
     authApiUrl: "https://dev.magda.io/api/v0/auth/",
     correspondenceApiUrl: "https://dev.magda.io/api/v0/correspondence/",
     storageApiUrl: "https://dev.magda.io/api/v0/storage/",
     previewMapUrl: "https://dev.magda.io/preview-map/",
     proxyUrl: "https://dev.magda.io/preview-map/proxy/",
-    rssUrl:
-        "https://dev.magda.io/preview-map/proxy/_0d/https://blog.data.gov.au/blogs/rss.xml",
+    rssUrl: "https://dev.magda.io/preview-map/proxy/_0d/https://blog.data.gov.au/blogs/rss.xml",
     disableAuthenticationFeatures: false,
     breakpoints: {
         small: 768,
         medium: 992,
         large: 1200
     },
-    facets: [
-        {
-            id: "publisher",
-            showExplanation: true,
-            name: "Organisation"
-        },
-        {
-            id: "region"
-        },
-        {
-            id: "format"
-        },
-        {
-            id: "temporal"
-        }
-    ],
     headerLogoUrl: "https://dev.magda.io/api/v0/content/header/logo",
     headerMobileLogoUrl:
         "https://dev.magda.io/api/v0/content/header/logo-mobile",
@@ -234,7 +226,6 @@ export const config: ConfigType = {
         cataloguing: true,
         publishToDga: true,
         previewAddDataset: false,
-        placeholderWorkflowsOn: false,
         datasetApprovalWorkflowOn: false,
         useStorageApi: true
     },
