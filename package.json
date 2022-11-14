@@ -13,7 +13,7 @@
     "start": "webpack serve --config webpack.dev.config.js"
   },
   "devDependencies": {
-    "@magda/external-ui-plugin-sdk": "^2.2.0-alpha.1",
+    "@magda/external-ui-plugin-sdk": "^2.2.0-alpha.3",
     "@svgr/webpack": "^5.5.0",
     "@types/react": "16.9.36",
     "@types/react-dom": "16.9.8",

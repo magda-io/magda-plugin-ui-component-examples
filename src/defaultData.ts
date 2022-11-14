@@ -167,7 +167,7 @@ export const footerSmallNavs = [
 ];
 
 export const config: ConfigDataType = {
-    credentialsFetchOptions: {
+    commonFetchRequestOptions: {
         credentials: "include"
     },
     showNotificationBanner: false,
@@ -175,19 +175,21 @@ export const config: ConfigDataType = {
     baseExternalUrl: "https://dev.magda.io/",
     uiBaseUrl: "/",
     authPluginRedirectUrl: "/sign-in-redirect",
-    contentApiURL: "https://dev.magda.io/api/v0/content/",
-    searchApiUrl: "https://dev.magda.io/api/v0/search/",
+    contentApiBaseUrl: "https://dev.magda.io/api/v0/content/",
+    searchApiBaseUrl: "https://dev.magda.io/api/v0/search/",
 
-    registryReadOnlyApiUrl: "https://dev.magda.io/api/v0/registry-read-only/",
-    registryFullApiUrl: "https://dev.magda.io/api/v0/registry/",
+    registryApiReadOnlyBaseUrl:
+        "https://dev.magda.io/api/v0/registry-read-only/",
+    registryApiBaseUrl: "https://dev.magda.io/api/v0/registry/",
     useMagdaStorageByDefault: true,
     anonymousUserLandingPage: "/home",
     authenticatedUserLandingPage: "/home",
-    adminApiUrl: "https://dev.magda.io/api/v0/admin/",
-    authApiUrl: "https://dev.magda.io/api/v0/auth/",
-    correspondenceApiUrl: "https://dev.magda.io/api/v0/correspondence/",
-    storageApiUrl: "https://dev.magda.io/api/v0/storage/",
-    previewMapUrl: "https://dev.magda.io/preview-map/",
+    adminApiBaseUrl: "https://dev.magda.io/api/v0/admin/",
+    authApiBaseUrl: "https://dev.magda.io/api/v0/auth/",
+    indexerApiBaseUrl: "https://dev.magda.io/api/v0/indexer/",
+    correspondenceApiBaseUrl: "https://dev.magda.io/api/v0/correspondence/",
+    storageApiBaseUrl: "https://dev.magda.io/api/v0/storage/",
+    previewMapBaseUrl: "https://dev.magda.io/preview-map/",
     proxyUrl: "https://dev.magda.io/preview-map/proxy/",
     rssUrl: "https://dev.magda.io/preview-map/proxy/_0d/https://blog.data.gov.au/blogs/rss.xml",
     disableAuthenticationFeatures: false,
