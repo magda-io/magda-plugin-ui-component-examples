@@ -1,9 +1,10 @@
 import React from "react";
 import { HeaderComponentType } from "@magda/external-ui-plugin-sdk";
+import "./MagdaPluginComponentHeader.scss";
 
 const MagdaPluginComponentHeader: HeaderComponentType = (props) => {
     return (
-        <div>
+        <div className="magda-ui-plugin-header-component-container">
             <div>
                 <h1>Header Component</h1>
             </div>
