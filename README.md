@@ -84,6 +84,8 @@ Release CI pipelines can be set up using the [sample github action workflows her
 
 To trigger the release pipeline, just create a new release using [Github release form UI](https://docs.github.com/en/repositories/releasing-projects-on-github/managing-releases-in-a-repository).
 
+After the release pipeline job is completed, you can download the build JS bundle from the release page.
+
 ### Run The Test Site
 
 The local test site is used to test the components functionality locally without Magda frontend. 
