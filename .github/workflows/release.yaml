@@ -14,6 +14,7 @@ jobs:
     name: Build Release JS Bundle
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v2
       - name: Version validation
         run: |
           SEMVER_REGEX="^v(0|[1-9][0-9]*)\\.(0|[1-9][0-9]*)\\.(0|[1-9][0-9]*)(\\-[0-9A-Za-z-]+(\\.[0-9A-Za-z-]+)*)?(\\+[0-9A-Za-z-]+(\\.[0-9A-Za-z-]+)*)?$"
@@ -21,8 +22,6 @@ jobs:
           VER_NUM=$(echo ${CI_COMMIT_TAG} | cut -b 2-)
           PACKAGE_JSON_VERSION=$(jq -r ".version" ./package.json)
           [[ "${VER_NUM}" == $PACKAGE_JSON_VERSION ]] || { echo "Release version doesn't match package.json version: '$PACKAGE_JSON_VERSION'" ; exit 1; }
-
-      - uses: actions/checkout@v2
 
       - name: Use Node.js 14
         uses: actions/setup-node@v1
