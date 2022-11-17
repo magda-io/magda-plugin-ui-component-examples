@@ -78,7 +78,15 @@ For more information, please refer to this issue:
 
 https://github.com/magda-io/magda/issues/3099
 
-### Run The Demo
+### Setup Release CI pipelines
+
+Release CI pipelines can be set up using the [sample github action workflows here](.github/workflows).
+
+To trigger the release pipeline, just create a new release using [Github release form UI](https://docs.github.com/en/repositories/releasing-projects-on-github/managing-releases-in-a-repository).
+
+### Run The Test Site
+
+The local test site is used to test the components functionality locally without Magda frontend. 
 
 ```bash
 yarn start
